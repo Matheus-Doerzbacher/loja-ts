@@ -12,7 +12,7 @@ export function ProductItem({ addShopCar, product }: ProductItemProps) {
   return (
     <div
       key={product.id}
-      className="flex flex-col items-center border-2 p-3 gap-2 rounded-md shadow-xl border-zinc-200"
+      className="flex flex-col items-center justify-between border-2 p-3 gap-2 rounded-md shadow-xl border-zinc-200"
     >
       <img src={product.urlImage} alt={product.name} height={150} width={150} />
 

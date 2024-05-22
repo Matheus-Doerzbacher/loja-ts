@@ -19,7 +19,6 @@ export interface Product {
 export default function Home() {
   const [shopCar, setShopCar] = useState<boolean>(false);
   const [productsList, setProductsList] = useState<Product[]>(ListProduts);
-
   // ADD PRODUCT
   function addShopCar(product: Product) {
     const updatedProductsList = productsList.map((p) =>
@@ -94,7 +93,7 @@ export default function Home() {
         <div className="container mx-auto mt-5">
           <div className="mx-5">
             <h3 className="text-2xl font-semibold text-zinc-800">Produtos</h3>
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-5 mt-3">
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6 gap-5 mt-3">
               {productsList.map((p) => (
                 <ProductItem
                   key={p.id}

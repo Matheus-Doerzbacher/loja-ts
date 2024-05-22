@@ -16,10 +16,12 @@ export function ProductItemShopCar({
 }: ProductItemProps) {
   return (
     <div className="flex gap-3">
-      <div className="flex flex-1 items-center justify-between border-2 p-3 gap-5 rounded-md shadow-md border-zinc-200">
+      <div className="flex flex-1 items-center border-2 p-3 gap-20 rounded-md shadow-md border-zinc-200">
         <img src={product.urlImage} alt={product.name} height={50} width={50} />
 
-        <h5 className="font-semibold text-lg">{product.name}</h5>
+        <h5 className="font-semibold text-lg text-center flex-1">
+          {product.name}
+        </h5>
 
         <p>R$ {product.value},00</p>
 
