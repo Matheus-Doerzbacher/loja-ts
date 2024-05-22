@@ -5,6 +5,8 @@ import { HeaderCustom } from "./components/header_custom";
 import { ProductItem } from "./components/product_item";
 import { ListProduts } from "./mock/list_products";
 import { ProductItemShopCar } from "./components/product_item_shop_car";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export interface Product {
   id: number;
@@ -19,6 +21,20 @@ export interface Product {
 export default function Home() {
   const [shopCar, setShopCar] = useState<boolean>(false);
   const [productsList, setProductsList] = useState<Product[]>(ListProduts);
+
+  function successToast(message: string) {
+    return toast.success(message, {
+      position: "bottom-right",
+      autoClose: 1000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: 0,
+      theme: "dark",
+    });
+  }
+
   // ADD PRODUCT
   function addShopCar(product: Product) {
     const updatedProductsList = productsList.map((p) =>
@@ -26,6 +42,7 @@ export default function Home() {
     );
 
     setProductsList(updatedProductsList);
+    successToast("Produto adicioando com sucesso");
   }
 
   // INCREMENT QUANTITY
@@ -55,6 +72,7 @@ export default function Home() {
     );
 
     setProductsList(updatedProductsList);
+    successToast("Produto excluido com sucesso!");
   }
 
   // TOTAL VALUE
@@ -89,8 +107,8 @@ export default function Home() {
         }
         shopCar={shopCar}
       />
-      {!shopCar ? (
-        <div className="container mx-auto mt-5">
+      <div className="container mx-auto mt-24 mb-10">
+        {!shopCar ? (
           <div className="mx-5">
             <h3 className="text-2xl font-semibold text-zinc-800">Produtos</h3>
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6 gap-5 mt-3">
@@ -103,9 +121,7 @@ export default function Home() {
               ))}
             </div>
           </div>
-        </div>
-      ) : (
-        <div className="container mx-auto mt-5">
+        ) : (
           <div className="mx-5">
             <h3 className="text-2xl font-semibold text-zinc-800">
               Meu Carrinho
@@ -141,8 +157,8 @@ export default function Home() {
               </div>
             )}
           </div>
-        </div>
-      )}
+        )}
+      </div>
     </main>
   );
 }

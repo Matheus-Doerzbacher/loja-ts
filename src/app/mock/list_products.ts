@@ -102,7 +102,7 @@ export const ListProduts = [
     id: 10,
     urlImage:
       "https://cdn.dooca.store/1290/products/img-8252-editar-recuperado_640x640+fill_ffffff.jpg?v=1673093058&webp=0",
-    name: "Chinelo Adidas`",
+    name: "Chinelo Adidas",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipis occ tempor invidunt ut labore et dolore magna.",
     value: 80,

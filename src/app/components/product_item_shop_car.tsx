@@ -16,7 +16,7 @@ export function ProductItemShopCar({
 }: ProductItemProps) {
   return (
     <div className="flex gap-3">
-      <div className="flex flex-1 items-center border-2 p-3 gap-20 rounded-md shadow-md border-zinc-200">
+      <div className="flex flex-1 items-center border-2 p-2 gap-20 rounded-md shadow-md border-zinc-200">
         <img src={product.urlImage} alt={product.name} height={50} width={50} />
 
         <h5 className="font-semibold text-lg text-center flex-1">
@@ -51,7 +51,7 @@ export function ProductItemShopCar({
         </button>
       </div>
       <div className="flex flex-col items-center  justify-center w-36 border-2 rounded-md shadow-md border-zinc-200">
-        <p>Valor Total</p>
+        <p className="font-semibold">Valor Total</p>
         <span>R$ {product.value * product.quantity},00 </span>
       </div>
     </div>

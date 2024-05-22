@@ -17,7 +17,7 @@ export function HeaderCustom({
   toHome,
 }: HeaderCustomProps) {
   return (
-    <header className="flex items-center justify-around bg-zinc-300 py-2">
+    <header className="flex items-center justify-around bg-zinc-300 py-2 fixed top-0 w-full shadow-lg shadow-zinc-400">
       <button onClick={toHome}>
         <Image alt="" src={logo} height={50} />
       </button>
